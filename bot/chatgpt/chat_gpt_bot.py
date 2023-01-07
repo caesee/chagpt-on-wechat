@@ -1,6 +1,6 @@
 import time
 from bot.bot import Bot
-from revChatGPT.revChatGPT import Chatbot
+from revChatGPT.ChatGPT import Chatbot
 from common.log import logger
 from config import conf
 
@@ -12,8 +12,8 @@ last_session_refresh = time.time()
 class ChatGPTBot(Bot):
     def __init__(self):
         config = {
-            "Authorization": "<Your Bearer Token Here>",  # This is optional
-            "session_token": conf().get("session_token")
+            "session_token": conf().get("session_token"),
+            "driver_exec_path": "/usr/local/bin/chromedriver"
         }
         self.chatbot = Chatbot(config)
 
