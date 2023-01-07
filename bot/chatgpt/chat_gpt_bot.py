@@ -41,7 +41,7 @@ class ChatGPTBot(Bot):
         logger.info("[GPT]convId={}, parentId={}".format(self.chatbot.conversation_id, self.chatbot.parent_id))
 
         try:
-            res = self.chatbot.get_chat_response(query, output="text")
+            res = self.chatbot.ask(query)
             logger.info("[GPT]userId={}, res={}".format(from_user_id, res))
 
             user_cache = dict()
